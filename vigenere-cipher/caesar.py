@@ -1,6 +1,26 @@
 
 alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
+def cesar_encode(mensagem, chave):
+    mensagem_encoded = ''
+    for letra in mensagem:
+        letter_index = alfabeto.find(letra)
+        new_letter = alfabeto[((letter_index + chave) % 26)]
+        mensagem_encoded += new_letter 
+    return mensagem_encoded
+
+def cesar_decode(mensagem, chave):
+    mensagem_decoded = ''
+    for letra in mensagem:
+        letter_index = alfabeto.find(letra)
+        new_letter = alfabeto[((letter_index - chave) % 26)]
+        mensagem_decoded += new_letter 
+    return mensagem_decoded
+
+
+
+
+
 def main():
     print("Welcome to Caesar Cipher")
     menu_option = 0
@@ -30,22 +50,6 @@ def interface_decode():
     mensagem  = input("Type a message to decode: (ALL CAPS) ")
     message_decoded = cesar_decode(mensagem, int(chave))
     print("Message Decoded: " + message_decoded)
-
-def cesar_encode(mensagem, chave):
-    mensagem_encoded = ''
-    for letra in mensagem:
-        letter_index = alfabeto.find(letra)
-        new_letter = alfabeto[letter_index + chave]
-        mensagem_encoded += new_letter 
-    return mensagem_encoded
-
-def cesar_decode(mensagem, chave):
-    mensagem_decoded = ''
-    for letra in mensagem:
-        letter_index = alfabeto.find(letra)
-        new_letter = alfabeto[letter_index - chave]
-        mensagem_decoded += new_letter 
-    return mensagem_decoded
 
 
 if __name__ == "__main__":
