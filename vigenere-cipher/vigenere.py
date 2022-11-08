@@ -1,7 +1,7 @@
 from caesar import cesar_encode, cesar_decode, alfabeto
 
 
-def generate_key(key, message):
+def key_gen(key, message):
     """Function to generate key repeating the base key until it has the size of the message"""
     size_of_key = len(key)
     new_key = ''
@@ -9,9 +9,10 @@ def generate_key(key, message):
         new_key += key[index % size_of_key]
     return new_key
 
-def encrypt(key, message):
+def encryption(key, message):
     """Function to encrypt the key using caesar cipher"""
     criptogram = ''
+    key = key_gen(key, message)
     for index, letter in enumerate(message):
         # get key index to use it as the key in caesar cipher with the letter
         key_index = alfabeto.find(key[index])
@@ -20,8 +21,9 @@ def encrypt(key, message):
     return criptogram
 
 
-def decrypt(key, criptogram):
+def decryption(key, criptogram):
     message = ''
+    key = key_gen(key, criptogram)
     for index, letter in enumerate(criptogram):
         # get key index to use it as the key in caesar cipher with the letter
         key_index = alfabeto.find(key[index])

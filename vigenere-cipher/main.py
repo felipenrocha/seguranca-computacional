@@ -1,13 +1,5 @@
-from vigenere import generate_key, encrypt, decrypt
+from interface import menu
 def main():
-    message = 'ATACARBASESUL'
-    key = generate_key('LIMAO', message)
-    print('Message: ', message)
-    print('Key: ', key)
-    criptogram = encrypt(key, 'ATACARBASESUL')
-    print('Encrypted: ', criptogram)
-    decrypted = decrypt(key, criptogram)
-    print('Decrypted: ', decrypted)
-    return
+    return menu()
 if __name__ == "__main__":
     main()
