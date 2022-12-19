@@ -7,17 +7,22 @@ from wtforms import StringField, SubmitField, TextAreaField, RadioField
 from wtforms.validators import DataRequired
 from flaskr.models.frequency import frequencyLetters, frequencyTrigrams
 from flaskr.models.vigenere import key_gen, encryption, decryption
+from flask_wtf.csrf import CSRFProtect
+    
     # create and configure the app
 
 SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
 json_url = os.path.join(SITE_ROOT, "static/data", "current_criptogram.json")
 
 app = Flask(__name__, instance_relative_config=True)
+csrf = CSRFProtect(app)
+csrf.init_app(app)
 app.config.from_mapping(
         SECRET_KEY='dev'
     )
 #setup forms
 bootstrap = Bootstrap4(app)
+
 # main route
 @app.route('/')
 def home():
@@ -103,10 +108,11 @@ def hack_two():
         return redirect('/hack-part-three/'+str(value), code=302)
 
     return render_template('solver2.html', form2=keySizeForm, frequencyDictionary=lettersDictionary, trigramsDictionary=trigramsDictionary, checkMultiple=checkMultiple) 
+@csrf.exempt
 @app.route('/api/frequency', methods=['POST'])
 def frequency():
-    response = request.get_json( )
-    print(response)
+    response = request.get_json()
+    print('response', response)
     return {}
 
 

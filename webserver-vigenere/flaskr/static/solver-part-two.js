@@ -1,4 +1,16 @@
 $(document).ready(function () {
+
+    var csrftoken = $('meta[name=csrf-token]').attr('content')
+
+    $.ajaxSetup({
+        beforeSend: function(xhr, settings) {
+            if (!/^(GET|HEAD|OPTIONS|TRACE)$/i.test(settings.type)) {
+                xhr.setRequestHeader("X-CSRFToken", csrftoken)
+            }
+        }
+    })
+
+
     let currentLetter = 1
     let url =  window.location.href
     urlSplits = url.split("/")
@@ -31,27 +43,28 @@ $(document).ready(function () {
         }
     });
     });
-    $( "#button-1" ).click(function() {
-        post()
-      });
 
-/*
+    /*
     TODO: get frequency for specific keysize:
     
 */
 // 1) api request:
-    data = {"currentLetter": currentLetter}
-    post(data)
-    
+
+
+    $( "#button-1" ).click(function() {
+        var request = $.ajax({
+            url: "/api/frequency",
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify({
+              currentLetter: currentLetter, 
+              known: 2
+            }),  
+         })  
+           .done( function (request) {
+         })
+      });
+
+
 
 });
-
-function post(data)
-{
-    $.post("/api/frequency", data,
-        function (data, textStatus, jqXHR) {
-            
-        },
-        "dataType"
-    );
-}
