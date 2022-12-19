@@ -5,7 +5,7 @@
 
 
 
-<link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
   integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
@@ -17,7 +17,9 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
   integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="{{ url_for('static', filename='solver-part-two.js') }}"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+
 
 <body>
 
@@ -25,11 +27,14 @@
 
 
 
+  <h3 style="font-style: bold;">Select key size: (Most likely the collumn with most x's) </h3>
+  <form method="post">
+    {{  render_form(form2) }}
+
+</form>
 
 
-  <p> Enter your cipher text</p>
 
-  {{ render_form(form) }}
   {% if trigramsDictionary %}
 
   <table id="data" class="table" style="width: 70%; height: 60%;">
@@ -63,12 +68,6 @@
       {% endfor %}
     </tbody>
   </table>
-  <h3 style="font-style: bold;">Select key size: (Most likely the collumn with most x's) </h3>
-  <form method="post">
-    {{  render_form(form2) }}
-
-</form>
 
   {% endif %}
-  
 </body>
