@@ -59,10 +59,7 @@ def getChartValues(criptogram, currentLetter, keySize):
     criptogram = unidecode(criptogram)
     criptogram = criptogram.translate(str.maketrans('', '', string.punctuation))
     criptogram = criptogram.lower()
-    criptogram = criptogram.replace(" ", "")
-    criptogram = criptogram.replace("\n", "")
-    criptogram = criptogram.replace("\r", "")
-
+   
 
 
     i = currentLetter - 1
