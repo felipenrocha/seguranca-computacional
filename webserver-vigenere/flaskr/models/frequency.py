@@ -1,6 +1,8 @@
 #### file to calculate frequency of letters in messages
 from unidecode import unidecode
 import string
+alfabeto = 'abcdefghijklmnopqrstuvxwyz'
+
 
 def frequencyLetters(message):
 
@@ -53,4 +55,16 @@ def trigram_counter(s):
 
 
 
+def getChartValues(criptogram, currentLetter, keySize):
+    criptogram = unidecode(criptogram)
 
+    i = currentLetter - 1
+    freqLetters = {}
+    for letter in alfabeto:
+        freqLetters[letter] = 0
+    while i < len(criptogram):
+        if criptogram[i] in freqLetters.keys():
+            freqLetters[criptogram[i]] = freqLetters[criptogram[i]]+1
+        i = i+keySize
+
+    return freqLetters

@@ -5,7 +5,7 @@ from flask_bootstrap import Bootstrap4
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, TextAreaField, RadioField
 from wtforms.validators import DataRequired
-from flaskr.models.frequency import frequencyLetters, frequencyTrigrams
+from flaskr.models.frequency import frequencyLetters, frequencyTrigrams, getChartValues
 from flaskr.models.vigenere import key_gen, encryption, decryption
 from flask_wtf.csrf import CSRFProtect
     
@@ -108,12 +108,18 @@ def hack_two():
         return redirect('/hack-part-three/'+str(value), code=302)
 
     return render_template('solver2.html', form2=keySizeForm, frequencyDictionary=lettersDictionary, trigramsDictionary=trigramsDictionary, checkMultiple=checkMultiple) 
-@csrf.exempt
+
+
+
 @app.route('/api/frequency', methods=['POST'])
 def frequency():
-    response = request.get_json()
-    print('response', response)
-    return {}
+    req = request.get_json()
+    currentLetter = int(req['currentLetter'])
+    keySize = int(req['keySize'])
+    criptogram = getCurrentCriptogram()
+    resp = getChartValues(criptogram=criptogram, currentLetter=currentLetter, keySize=keySize)
+    print(resp)
+    return resp
 
 
 @app.route('/hack-part-three/<keysize>', methods=['GET', 'POST'])
