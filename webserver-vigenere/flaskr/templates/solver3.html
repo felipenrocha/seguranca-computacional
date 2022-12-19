@@ -1,7 +1,7 @@
 <!doctype html>
 {% from 'bootstrap4/form.html' import render_form %}
 
-<h3>Vigenere Solver</h3>
+
 
 
 
@@ -21,14 +21,13 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
 
 
+<h3>Vigenere Solver</h3>
+
 <div style="margin: 0 auto;">
     <select id="dropdown-id">
         <option value="en">Inglês</option>
         <option value="pt">Português</option>
-        
     </select>
-
-
 
 </div>
 <div class="row">
@@ -37,26 +36,24 @@
     Você acredita que a chave tem tamanho: {{keySize}}, como não sabemos qual é cada letra chamaremos de 
     <p>
     {% for i in range(keySize) %}
-   <button id="button-{{i+1}}"> L-{{i+1}} </button>
+      <button id="button-{{i+1}}"> L-{{i+1}} </button>
 
     {% endfor %}
   </p>
   </p>
-  
   </div>
 </div>
 
 <div class="row">
-
-
   <div class="chart-container">
       <canvas id="freqLetters1"></canvas>
   </div>
 </div>
 <div style="margin: 250px;"></div>
-<div class="row">  <div class="chart-container">
-    <button id="shif-left">Shift Left</button>
-    <button id="shif-right">Shift Right</button>
-    <canvas id="freqLetters2"></canvas>
-</div></div>
+  <div class="row">  <div class="chart-container">
+      <button id="shif-left">Shift Left</button>
+      <button id="shif-right">Shift Right</button>
+      <canvas id="freqLetters2"></canvas>
+  </div>
+</div>
 

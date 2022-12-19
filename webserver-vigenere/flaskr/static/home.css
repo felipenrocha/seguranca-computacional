@@ -1,9 +1,12 @@
+
+body {
+   padding-inline: 2rem;
+}
+
 .chart-container {
    width: 800px;
    height: 200px;
    margin: 0 auto;
-   
-
 }
 
 #freqLetters2 {
