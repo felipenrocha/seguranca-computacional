@@ -16,7 +16,6 @@
   <p>Digite a seguir a mensagem para ser decifrada e sua chave</p>
   {{ render_form(form) }}
   {% if criptogram %}
-    <h6>Mensagem Criptografada: {{criptogram}} </h6>
-    <h6>Chave: {{key}} </h6>
+    <h6>Mensagem Decifrada: {{criptogram}} </h6>
     {% endif %}
     <a href="/ed"><button class="btn btn-default">Voltar</button></a>

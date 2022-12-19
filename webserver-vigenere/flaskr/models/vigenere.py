@@ -38,9 +38,8 @@ def encryption(key, message):
 
 def decryption(key, criptogram):
     message = ''
-    criptogram = criptogram.replace("\n", " ").upper()
-    criptogram = criptogram.replace(" ", "")
-    criptogram = criptogram.translate(str.maketrans('', '', string.punctuation))
+    criptogram = criptogram.upper()
+    criptogram = ''.join(e for e in criptogram if e.isalnum())
 
     
     key = key_gen(key, criptogram)
@@ -52,7 +51,6 @@ def decryption(key, criptogram):
             message += new_key
         else:
             message += letter
-            index -= 1
     return message
 
 
