@@ -1,3 +1,4 @@
+const alfabeto = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 $(document).ready(function () {
 
     var csrftoken = $('meta[name=csrf-token]').attr('content')
@@ -16,6 +17,8 @@ $(document).ready(function () {
     urlSplits = url.split("/")
     let keySize = urlSplits[4]
     const ctx = document.getElementById('freqLetters1');
+    const ctx2 = document.getElementById('freqLetters2');
+    let chart2;
     $.getJSON('../static/data/letter_freq_en.json', function (data) {
         myItems = data;
         letters = Object.keys(data);
@@ -23,7 +26,7 @@ $(document).ready(function () {
         letters.forEach(element => {
             letters_value.push(data[element])
         });
-        new Chart(ctx, {
+        chart1 = new Chart(ctx, {
             type: 'bar',
             data: {
                 labels: letters,
@@ -63,24 +66,26 @@ $(document).ready(function () {
                     keySize: keySize
                 }),
             })
+                // 2) generate chart
                 .done(function (request) {
                     console.log(request)
-                    letters = Object.keys(request)
+                    letters2 = Object.keys(request)
                     console.log('letters', letters)
-                    letters_value = []
-                    letters.forEach(element => {
-                        letters_value.push(request[element])
+                    letters_value2 = []
+                    letters2.forEach(element => {
+                        letters_value2.push(request[element])
                     });
-                    console.log('lettersvalue', letters_value)
+                    if (chart2) { chart2.destroy() }
+                    letterIndex = 0
+                    $("#button-".concat(currentLetter)).html(alfabeto[letterIndex]);
 
-                    const ctx2 = document.getElementById('freqLetters2');
-                    new Chart(ctx2, {
+                    chart2 = new Chart(ctx2, {
                         type: 'bar',
                         data: {
-                            labels: letters,
+                            labels: letters2,
                             datasets: [{
                                 label: 'Frequency of Letters',
-                                data: letters_value,
+                                data: letters_value2,
                                 borderWidth: 1,
                                 backgroundColor: "purple"
                             }]
@@ -96,9 +101,52 @@ $(document).ready(function () {
 
                 })
         });
+
+
     }
 
+    // 3) add shift right and left
 
+    $("#shif-left").click(function () {
+        if (letterIndex < 25) { letterIndex = letterIndex + 1 }
+        else {
+            letterIndex = 0
+        }
+        $("#button-".concat(currentLetter)).html(alfabeto[letterIndex]);
+        chart2.data.labels = rotateLeft(chart2.data.labels)
+        chart2.data.datasets.forEach((dataset) => {
+            dataset.data = rotateLeft(dataset.data);
+        });
+        chart2.update();
+       
+    });
+    $("#shif-right").click(function () {
+        if (letterIndex > 0) { letterIndex = letterIndex - 1 }
+        else {
+            letterIndex = 25
+        }
 
+        $("#button-".concat(currentLetter)).html(alfabeto[letterIndex]);
+
+        chart2.data.labels = rotateRight(chart2.data.labels)
+        chart2.data.datasets.forEach((dataset) => {
+            dataset.data = rotateRight(dataset.data);
+        });
+        chart2.update();
+    });
+
+ 
 
 });
+
+function rotateLeft(arr) {
+    let first = arr.shift();
+    arr.push(first);
+    return arr;
+}
+
+function rotateRight(arr) {
+    let last = arr.pop();
+    arr.unshift(last);
+    return arr;
+}

@@ -57,7 +57,6 @@ def trigram_counter(s):
 
 def getChartValues(criptogram, currentLetter, keySize):
     criptogram = unidecode(criptogram)
-
     i = currentLetter - 1
     freqLetters = {}
     for letter in alfabeto:
