@@ -44,6 +44,9 @@ def trigram_counter(s):
     
     s = unidecode(s)
     s = s.translate(str.maketrans('', '', string.punctuation))
+    s = s.replace(" ", "")
+    s = s.replace("\n", "")
+    s = s.replace("\r", "")
     # CODE FROM: https://stackoverflow.com/questions/74087541/bigrams-of-letters
     if len(s := s.upper()) > 1:
         c = {}
@@ -57,6 +60,14 @@ def trigram_counter(s):
 
 def getChartValues(criptogram, currentLetter, keySize):
     criptogram = unidecode(criptogram)
+    criptogram = criptogram.translate(str.maketrans('', '', string.punctuation))
+    criptogram = criptogram.lower()
+    criptogram = criptogram.replace(" ", "")
+    criptogram = criptogram.replace("\n", "")
+    criptogram = criptogram.replace("\r", "")
+
+
+
     i = currentLetter - 1
     freqLetters = {}
     for letter in alfabeto:

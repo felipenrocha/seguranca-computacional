@@ -1,3 +1,5 @@
+
+import string
 alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 
@@ -13,22 +15,44 @@ def encryption(key, message):
     """Function to encrypt the key using caesar cipher"""
     criptogram = ''
     key = key_gen(key, message)
-    for index, letter in enumerate(message):
+    message = message.replace("\n", " ").upper()
+    message = message.replace("\r", " ").upper()
+
+    message = message.translate(str.maketrans('', '', string.punctuation))
+    message = message.replace(" ", "")
+
+
+
+    index = 0
+    while index < len(message):
+        letter = message[index]
         # get key index to use it as the key in caesar cipher with the letter
         key_index = alfabeto.find(key[index])
-        new_key = cesar_encode(letter, key_index)
-        criptogram += new_key
+        if letter in alfabeto:
+            new_key = cesar_encode(letter, key_index)
+            criptogram += new_key
+            index+=1
+            
     return criptogram
 
 
 def decryption(key, criptogram):
     message = ''
+    criptogram = criptogram.replace("\n", " ").upper()
+    criptogram = criptogram.replace(" ", "")
+    criptogram = criptogram.translate(str.maketrans('', '', string.punctuation))
+
+    
     key = key_gen(key, criptogram)
     for index, letter in enumerate(criptogram):
         # get key index to use it as the key in caesar cipher with the letter
         key_index = alfabeto.find(key[index])
-        new_key = cesar_decode(letter, key_index)
-        message += new_key
+        if letter in alfabeto:
+            new_key = cesar_decode(letter, key_index)
+            message += new_key
+        else:
+            message += letter
+            index -= 1
     return message
 
 

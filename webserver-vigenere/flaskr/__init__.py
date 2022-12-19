@@ -117,6 +117,7 @@ def frequency():
     currentLetter = int(req['currentLetter'])
     keySize = int(req['keySize'])
     criptogram = getCurrentCriptogram()
+    print('req', req)
     resp = getChartValues(criptogram=criptogram, currentLetter=currentLetter, keySize=keySize)
     print(resp)
     return resp

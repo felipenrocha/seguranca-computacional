@@ -12,6 +12,41 @@ $(document).ready(function () {
     })
 
 
+
+    $("#dropdown-id").change(function () {
+
+        chart1.destroy()
+        $.getJSON('../static/data/letter_freq_'.concat(this.value).concat( '.json'), function (data) {
+            myItems = data;
+            letters = Object.keys(data);
+            letters_value = []
+            letters.forEach(element => {
+                letters_value.push(data[element])
+            });
+            chart1 = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: letters,
+                    datasets: [{
+                        label: 'Frequency of Letters',
+                        data: letters_value,
+                        borderWidth: 1,
+                        backgroundColor: "purple"
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        });
+    
+
+    });
+
     let currentLetter = 1
     let url = window.location.href
     urlSplits = url.split("/")
@@ -19,6 +54,7 @@ $(document).ready(function () {
     const ctx = document.getElementById('freqLetters1');
     const ctx2 = document.getElementById('freqLetters2');
     let chart2;
+    let chart1;
     $.getJSON('../static/data/letter_freq_en.json', function (data) {
         myItems = data;
         letters = Object.keys(data);
