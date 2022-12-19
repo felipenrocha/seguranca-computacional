@@ -43,15 +43,12 @@ def findSpacing(trigram, message):
 def trigram_counter(s):
     
     s = unidecode(s)
-    s = s.translate(str.maketrans('', '', string.punctuation))
-    s = s.replace(" ", "")
-    s = s.replace("\n", "")
-    s = s.replace("\r", "")
+   
     # CODE FROM: https://stackoverflow.com/questions/74087541/bigrams-of-letters
     if len(s := s.upper()) > 1:
         c = {}
         for i in range(len(s)-1):
-            if len(bi := s[i:i+3].strip('. ')) == 3 and (' ' or '  ') not in bi:
+            if len(bi := s[i:i+3].strip('. ')) == 3 and (' ' or '  ' or string.punctuation) not in bi:
                 c[bi] = c.get(bi, 0) + 1
         return [(t) for t in c.items()]
 

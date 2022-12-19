@@ -43,16 +43,6 @@
     "trigramsDictionary": [
         {
             "frequency": 2,
-            "name": "TPS",
-            "spacing": 0
-        },
-        {
-            "frequency": 2,
-            "name": "PSJ",
-            "spacing": 0
-        },
-        {
-            "frequency": 3,
             "name": "EXI",
             "spacing": 2287
         },
@@ -62,17 +52,12 @@
             "spacing": 736
         },
         {
-            "frequency": 5,
+            "frequency": 3,
             "name": "TTG",
             "spacing": 2018
         },
         {
             "frequency": 2,
-            "name": "FVS",
-            "spacing": 0
-        },
-        {
-            "frequency": 3,
             "name": "SET",
             "spacing": 157
         },
@@ -80,21 +65,6 @@
             "frequency": 2,
             "name": "ETW",
             "spacing": 1289
-        },
-        {
-            "frequency": 2,
-            "name": "TTW",
-            "spacing": 0
-        },
-        {
-            "frequency": 2,
-            "name": "TWB",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
-            "name": "WBT",
-            "spacing": 0
         },
         {
             "frequency": 2,
@@ -118,26 +88,6 @@
         },
         {
             "frequency": 2,
-            "name": "OZN",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
-            "name": "TQA",
-            "spacing": 0
-        },
-        {
-            "frequency": 3,
-            "name": "ACW",
-            "spacing": 1877
-        },
-        {
-            "frequency": 3,
-            "name": "CWI",
-            "spacing": 0
-        },
-        {
-            "frequency": 2,
             "name": "AHV",
             "spacing": 728
         },
@@ -153,28 +103,8 @@
         },
         {
             "frequency": 2,
-            "name": "PSD",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
-            "name": "SDP",
-            "spacing": 0
-        },
-        {
-            "frequency": 2,
             "name": "AVU",
             "spacing": 1535
-        },
-        {
-            "frequency": 2,
-            "name": "VUY",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
-            "name": "UYT",
-            "spacing": -1
         },
         {
             "frequency": 2,
@@ -198,16 +128,6 @@
         },
         {
             "frequency": 2,
-            "name": "EHS",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
-            "name": "PAZ",
-            "spacing": 0
-        },
-        {
-            "frequency": 3,
             "name": "AZN",
             "spacing": 1786
         },
@@ -223,18 +143,8 @@
         },
         {
             "frequency": 2,
-            "name": "AGH",
-            "spacing": 0
-        },
-        {
-            "frequency": 3,
             "name": "ISE",
             "spacing": 602
-        },
-        {
-            "frequency": 2,
-            "name": "MRC",
-            "spacing": -1
         },
         {
             "frequency": 2,
@@ -243,33 +153,8 @@
         },
         {
             "frequency": 2,
-            "name": "CDE",
-            "spacing": 0
-        },
-        {
-            "frequency": 2,
             "name": "GOT",
             "spacing": 1051
-        },
-        {
-            "frequency": 2,
-            "name": "PLQ",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
-            "name": "LQQ",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
-            "name": "CTQ",
-            "spacing": 0
-        },
-        {
-            "frequency": 2,
-            "name": "TQM",
-            "spacing": -1
         },
         {
             "frequency": 2,
@@ -293,28 +178,8 @@
         },
         {
             "frequency": 2,
-            "name": "IYT",
-            "spacing": 0
-        },
-        {
-            "frequency": 2,
             "name": "YTH",
             "spacing": 1281
-        },
-        {
-            "frequency": 2,
-            "name": "HFD",
-            "spacing": 0
-        },
-        {
-            "frequency": 3,
-            "name": "DZT",
-            "spacing": -1
-        },
-        {
-            "frequency": 3,
-            "name": "ZTT",
-            "spacing": -1
         },
         {
             "frequency": 3,
@@ -332,24 +197,9 @@
             "spacing": 855
         },
         {
-            "frequency": 2,
-            "name": "RZI",
-            "spacing": 0
-        },
-        {
             "frequency": 4,
             "name": "NEX",
             "spacing": 744
-        },
-        {
-            "frequency": 2,
-            "name": "XYY",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
-            "name": "YYP",
-            "spacing": -1
         },
         {
             "frequency": 2,
@@ -367,24 +217,14 @@
             "spacing": 30
         },
         {
-            "frequency": 3,
+            "frequency": 2,
             "name": "XTW",
             "spacing": 1460
         },
         {
             "frequency": 2,
-            "name": "VFF",
-            "spacing": 0
-        },
-        {
-            "frequency": 2,
             "name": "GXA",
             "spacing": 133
-        },
-        {
-            "frequency": 2,
-            "name": "CIE",
-            "spacing": 0
         },
         {
             "frequency": 2,
@@ -398,58 +238,13 @@
         },
         {
             "frequency": 2,
-            "name": "LEX",
-            "spacing": 0
-        },
-        {
-            "frequency": 4,
-            "name": "EXT",
-            "spacing": -1
-        },
-        {
-            "frequency": 3,
-            "name": "TGM",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
-            "name": "DRF",
-            "spacing": 0
-        },
-        {
-            "frequency": 2,
             "name": "FZB",
             "spacing": 1258
         },
         {
             "frequency": 2,
-            "name": "FFB",
-            "spacing": 0
-        },
-        {
-            "frequency": 2,
             "name": "BPK",
             "spacing": 2201
-        },
-        {
-            "frequency": 2,
-            "name": "PGV",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
-            "name": "MTE",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
-            "name": "TEL",
-            "spacing": -1
-        },
-        {
-            "frequency": 3,
-            "name": "ZXW",
-            "spacing": -1
         },
         {
             "frequency": 2,
@@ -487,34 +282,19 @@
             "spacing": 1904
         },
         {
+            "frequency": 2,
+            "name": "TG,",
+            "spacing": 712
+        },
+        {
             "frequency": 3,
             "name": "HUP",
             "spacing": 560
         },
         {
-            "frequency": 2,
-            "name": "PME",
-            "spacing": -1
-        },
-        {
             "frequency": 3,
             "name": "CZG",
             "spacing": 510
-        },
-        {
-            "frequency": 2,
-            "name": "AJO",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
-            "name": "JOJ",
-            "spacing": 0
-        },
-        {
-            "frequency": 2,
-            "name": "DIS",
-            "spacing": 0
         },
         {
             "frequency": 2,
@@ -528,23 +308,8 @@
         },
         {
             "frequency": 2,
-            "name": "VAX",
-            "spacing": 0
-        },
-        {
-            "frequency": 2,
-            "name": "OOB",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
             "name": "JQG",
             "spacing": 572
-        },
-        {
-            "frequency": 2,
-            "name": "QGS",
-            "spacing": 0
         },
         {
             "frequency": 2,
@@ -552,22 +317,7 @@
             "spacing": 1939
         },
         {
-            "frequency": 2,
-            "name": "CLK",
-            "spacing": 0
-        },
-        {
-            "frequency": 2,
-            "name": "LKE",
-            "spacing": 0
-        },
-        {
             "frequency": 4,
-            "name": "KEP",
-            "spacing": 0
-        },
-        {
-            "frequency": 5,
             "name": "PGX",
             "spacing": 168
         },
@@ -580,11 +330,6 @@
             "frequency": 2,
             "name": "XDT",
             "spacing": 1364
-        },
-        {
-            "frequency": 3,
-            "name": "DTS",
-            "spacing": 0
         },
         {
             "frequency": 2,
@@ -627,11 +372,6 @@
             "spacing": 183
         },
         {
-            "frequency": 3,
-            "name": "EHI",
-            "spacing": 0
-        },
-        {
             "frequency": 2,
             "name": "IJE",
             "spacing": 1759
@@ -647,27 +387,7 @@
             "spacing": 1759
         },
         {
-            "frequency": 3,
-            "name": "IET",
-            "spacing": 0
-        },
-        {
-            "frequency": 3,
-            "name": "ETT",
-            "spacing": 0
-        },
-        {
-            "frequency": 3,
-            "name": "TWP",
-            "spacing": -1
-        },
-        {
             "frequency": 2,
-            "name": "WPJ",
-            "spacing": -1
-        },
-        {
-            "frequency": 3,
             "name": "KEE",
             "spacing": 764
         },
@@ -678,13 +398,8 @@
         },
         {
             "frequency": 2,
-            "name": "PTI",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
-            "name": "TID",
-            "spacing": -1
+            "name": "ACW",
+            "spacing": 1877
         },
         {
             "frequency": 2,
@@ -693,58 +408,8 @@
         },
         {
             "frequency": 2,
-            "name": "DAD",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
-            "name": "PTV",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
-            "name": "CTH",
-            "spacing": 0
-        },
-        {
-            "frequency": 3,
-            "name": "THA",
-            "spacing": 0
-        },
-        {
-            "frequency": 2,
-            "name": "HAB",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
             "name": "KAH",
             "spacing": 193
-        },
-        {
-            "frequency": 2,
-            "name": "AMX",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
-            "name": "EPT",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
-            "name": "PTQ",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
-            "name": "TQR",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
-            "name": "HSJ",
-            "spacing": 0
         },
         {
             "frequency": 2,
@@ -758,23 +423,8 @@
         },
         {
             "frequency": 2,
-            "name": "SPG",
-            "spacing": 0
-        },
-        {
-            "frequency": 2,
             "name": "GXM",
             "spacing": 1427
-        },
-        {
-            "frequency": 2,
-            "name": "XMT",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
-            "name": "AEK",
-            "spacing": 0
         },
         {
             "frequency": 2,
@@ -787,12 +437,12 @@
             "spacing": 1639
         },
         {
-            "frequency": 3,
+            "frequency": 2,
             "name": "IOD",
             "spacing": 1568
         },
         {
-            "frequency": 3,
+            "frequency": 2,
             "name": "ODI",
             "spacing": 952
         },
@@ -803,8 +453,8 @@
         },
         {
             "frequency": 2,
-            "name": "DGV",
-            "spacing": -1
+            "name": "DG,",
+            "spacing": 1631
         },
         {
             "frequency": 2,
@@ -818,23 +468,8 @@
         },
         {
             "frequency": 2,
-            "name": "PRV",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
             "name": "ODA",
             "spacing": 1513
-        },
-        {
-            "frequency": 2,
-            "name": "DAG",
-            "spacing": 0
-        },
-        {
-            "frequency": 2,
-            "name": "AGA",
-            "spacing": 0
         },
         {
             "frequency": 2,
@@ -843,18 +478,8 @@
         },
         {
             "frequency": 2,
-            "name": "OFC",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
             "name": "FTF",
             "spacing": 1240
-        },
-        {
-            "frequency": 2,
-            "name": "AXB",
-            "spacing": 0
         },
         {
             "frequency": 2,
@@ -887,24 +512,9 @@
             "spacing": 1320
         },
         {
-            "frequency": 2,
-            "name": "VQF",
-            "spacing": -1
-        },
-        {
             "frequency": 5,
             "name": "QFX",
             "spacing": 766
-        },
-        {
-            "frequency": 2,
-            "name": "FXR",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
-            "name": "XRM",
-            "spacing": -1
         },
         {
             "frequency": 2,
@@ -913,18 +523,8 @@
         },
         {
             "frequency": 2,
-            "name": "RSY",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
             "name": "ECT",
             "spacing": 1160
-        },
-        {
-            "frequency": 2,
-            "name": "XUG",
-            "spacing": -1
         },
         {
             "frequency": 4,
@@ -933,11 +533,6 @@
         },
         {
             "frequency": 2,
-            "name": "MJA",
-            "spacing": -1
-        },
-        {
-            "frequency": 3,
             "name": "JAR",
             "spacing": 946
         },
@@ -963,33 +558,8 @@
         },
         {
             "frequency": 2,
-            "name": "XIO",
-            "spacing": 0
-        },
-        {
-            "frequency": 2,
-            "name": "TLG",
-            "spacing": 0
-        },
-        {
-            "frequency": 2,
-            "name": "FCZ",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
             "name": "WFP",
             "spacing": 349
-        },
-        {
-            "frequency": 2,
-            "name": "GTZ",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
-            "name": "EGA",
-            "spacing": -1
         },
         {
             "frequency": 2,
@@ -1003,11 +573,6 @@
         },
         {
             "frequency": 2,
-            "name": "RRP",
-            "spacing": 0
-        },
-        {
-            "frequency": 2,
             "name": "EYA",
             "spacing": 94
         },
@@ -1015,26 +580,6 @@
             "frequency": 2,
             "name": "YAS",
             "spacing": 94
-        },
-        {
-            "frequency": 2,
-            "name": "SEP",
-            "spacing": 0
-        },
-        {
-            "frequency": 2,
-            "name": "TTR",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
-            "name": "TRA",
-            "spacing": 0
-        },
-        {
-            "frequency": 2,
-            "name": "ASW",
-            "spacing": -1
         },
         {
             "frequency": 2,
@@ -1047,24 +592,9 @@
             "spacing": 281
         },
         {
-            "frequency": 2,
-            "name": "KWA",
-            "spacing": 0
-        },
-        {
-            "frequency": 3,
-            "name": "AFI",
-            "spacing": -1
-        },
-        {
             "frequency": 6,
             "name": "FIV",
             "spacing": 191
-        },
-        {
-            "frequency": 2,
-            "name": "XMD",
-            "spacing": 0
         },
         {
             "frequency": 2,
@@ -1083,11 +613,6 @@
         },
         {
             "frequency": 2,
-            "name": "GJE",
-            "spacing": 0
-        },
-        {
-            "frequency": 3,
             "name": "JEY",
             "spacing": 1200
         },
@@ -1095,21 +620,6 @@
             "frequency": 2,
             "name": "PTW",
             "spacing": 1382
-        },
-        {
-            "frequency": 2,
-            "name": "WJD",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
-            "name": "GTO",
-            "spacing": 0
-        },
-        {
-            "frequency": 2,
-            "name": "TOE",
-            "spacing": 0
         },
         {
             "frequency": 3,
@@ -1128,11 +638,6 @@
         },
         {
             "frequency": 2,
-            "name": "QTG",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
             "name": "TGK",
             "spacing": 97
         },
@@ -1143,16 +648,6 @@
         },
         {
             "frequency": 2,
-            "name": "RVP",
-            "spacing": 0
-        },
-        {
-            "frequency": 2,
-            "name": "QJA",
-            "spacing": -1
-        },
-        {
-            "frequency": 3,
             "name": "OTT",
             "spacing": 1352
         },
@@ -1160,11 +655,6 @@
             "frequency": 2,
             "name": "PKI",
             "spacing": 130
-        },
-        {
-            "frequency": 2,
-            "name": "EFI",
-            "spacing": -1
         },
         {
             "frequency": 2,
@@ -1202,14 +692,9 @@
             "spacing": 418
         },
         {
-            "frequency": 4,
+            "frequency": 2,
             "name": "ABC",
             "spacing": 418
-        },
-        {
-            "frequency": 2,
-            "name": "SDA",
-            "spacing": -1
         },
         {
             "frequency": 2,
@@ -1223,26 +708,11 @@
         },
         {
             "frequency": 2,
-            "name": "TGX",
-            "spacing": 0
-        },
-        {
-            "frequency": 2,
-            "name": "BOJ",
-            "spacing": 0
-        },
-        {
-            "frequency": 2,
-            "name": "XPA",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
             "name": "FGS",
             "spacing": 1039
         },
         {
-            "frequency": 3,
+            "frequency": 2,
             "name": "GEA",
             "spacing": 636
         },
@@ -1250,11 +720,6 @@
             "frequency": 2,
             "name": "EHW",
             "spacing": 793
-        },
-        {
-            "frequency": 2,
-            "name": "XGT",
-            "spacing": 0
         },
         {
             "frequency": 2,
@@ -1268,33 +733,13 @@
         },
         {
             "frequency": 2,
-            "name": "IUE",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
             "name": "EOI",
             "spacing": 800
         },
         {
             "frequency": 2,
-            "name": "XVQ",
-            "spacing": 0
-        },
-        {
-            "frequency": 3,
             "name": "EEX",
             "spacing": 526
-        },
-        {
-            "frequency": 2,
-            "name": "BCT",
-            "spacing": 0
-        },
-        {
-            "frequency": 3,
-            "name": "CTO",
-            "spacing": 0
         },
         {
             "frequency": 2,
@@ -1313,23 +758,8 @@
         },
         {
             "frequency": 2,
-            "name": "WSH",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
             "name": "IEH",
             "spacing": 393
-        },
-        {
-            "frequency": 2,
-            "name": "OJA",
-            "spacing": 0
-        },
-        {
-            "frequency": 2,
-            "name": "TGA",
-            "spacing": -1
         },
         {
             "frequency": 2,
@@ -1347,7 +777,7 @@
             "spacing": 460
         },
         {
-            "frequency": 3,
+            "frequency": 2,
             "name": "ETB",
             "spacing": 522
         },
@@ -1378,38 +808,13 @@
         },
         {
             "frequency": 2,
-            "name": "MEO",
-            "spacing": 0
-        },
-        {
-            "frequency": 2,
-            "name": "DGE",
-            "spacing": -1
-        },
-        {
-            "frequency": 2,
-            "name": "WET",
-            "spacing": 0
-        },
-        {
-            "frequency": 2,
-            "name": "QFI",
-            "spacing": 0
-        },
-        {
-            "frequency": 2,
-            "name": "DAE",
-            "spacing": 0
+            "name": "XM,",
+            "spacing": 441
         },
         {
             "frequency": 2,
             "name": "YME",
             "spacing": 143
-        },
-        {
-            "frequency": 2,
-            "name": "EPP",
-            "spacing": -1
         }
     ]
 }

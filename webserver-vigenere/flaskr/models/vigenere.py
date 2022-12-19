@@ -40,7 +40,7 @@ def decryption(key, criptogram):
     message = ''
     criptogram = criptogram.upper()
     criptogram = ''.join(e for e in criptogram if e.isalnum())
-
+    criptogram = ''.join([i for i in criptogram if not i.isdigit()])
     
     key = key_gen(key, criptogram)
     for index, letter in enumerate(criptogram):
