@@ -11,48 +11,37 @@ def key_gen(key, message):
         new_key += key[index % size_of_key]
     return new_key
 
+
 def encryption(key, message):
-    """Function to encrypt the key using caesar cipher"""
-    criptogram = ''
     key = key_gen(key, message)
-    message = message.replace("\n", " ").upper()
-    message = message.replace("\r", " ").upper()
-
-    message = message.translate(str.maketrans('', '', string.punctuation))
-    message = message.replace(" ", "")
-
-
-
-    index = 0
-    while index < len(message):
-        letter = message[index]
-        # get key index to use it as the key in caesar cipher with the letter
-        key_index = alfabeto.find(key[index])
-        if letter in alfabeto:
-            new_key = cesar_encode(letter, key_index)
-            criptogram += new_key
-            index+=1
-            
+    criptogram = ''
+    for i in range(len(message)):
+        if message[i].isalpha():
+            x = (ord(message[i]) +
+                ord(key[i])) % 26
+            x += ord('A')
+            criptogram += chr(x)
+        else:
+            criptogram += message[i]
     return criptogram
+     
 
 
 def decryption(key, criptogram):
-    message = ''
+    key= key_gen(key, criptogram)
     criptogram = criptogram.upper()
-    criptogram = ''.join(e for e in criptogram if e.isalnum())
-
-    
-    key = key_gen(key, criptogram)
-    for index, letter in enumerate(criptogram):
-        # get key index to use it as the key in caesar cipher with the letter
-        key_index = alfabeto.find(key[index])
-        if letter in alfabeto:
-            new_key = cesar_decode(letter, key_index)
-            message += new_key
+    message = ''
+    key_index = 0
+    for i in range(len(criptogram)):
+        if criptogram[i].isalpha():
+            x = (ord(criptogram[i]) -
+                ord(key[key_index]) + 26) % 26
+            x += ord('A')
+            message += chr(x)
+            key_index += 1
         else:
-            message += letter
-    return message
-
+            message += criptogram[i]
+    return message 
 
 
 def cesar_encode(message, key):
