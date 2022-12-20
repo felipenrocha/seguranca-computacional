@@ -42,7 +42,6 @@ def trigramCounter(message):
             chartList.append({"name": name, "spacing": spacing})
     
     # get most common multiple between 2-20
-    spacingList = []
     multiplesDict = {}
     # push all spacings
     for i in range(len(chartList)):
@@ -66,19 +65,29 @@ def trigramCounter(message):
 
 
 def getChartValues(criptogram, currentLetter, keySize):
-    criptogram = unidecode(criptogram)
-    criptogram = criptogram.translate(str.maketrans('', '', string.punctuation))
+       
     criptogram = criptogram.lower()
-   
+    # remove spaces
+    criptogram = criptogram.replace(" ","")
+    # remove punctuation
+    criptogram = criptogram.translate(str.maketrans('', '', string.punctuation))
+    # remove numbers
+    criptogram = ''.join([i for i in criptogram if not i.isdigit()])
+    criptogram = criptogram.replace("—", "")
+    criptogram = criptogram.replace("”", "")
 
-
-    i = currentLetter - 1
+    # index = index - 1 
+    i = currentLetter - 1 
     freqLetters = {}
     for letter in alfabeto:
         freqLetters[letter] = 0
     while i < len(criptogram):
-        if criptogram[i] in freqLetters.keys():
-            freqLetters[criptogram[i]] = freqLetters[criptogram[i]]+1
-        i = i+keySize
-
+        letter = criptogram[i]
+        freqLetters[letter] = freqLetters[letter]+1
+        i = i + keySize
+    print(freqLetters)
     return freqLetters
+
+
+def remove_non_ascii(string):
+    return ''.join(char for char in string if ord(char) < 128)

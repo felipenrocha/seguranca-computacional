@@ -1,2 +1,4 @@
 webserver-vigenere/venv
 *.pyc
+webserver-vigenere/*.pyc
+webserver-vigenere/flaskr/*.pyc
