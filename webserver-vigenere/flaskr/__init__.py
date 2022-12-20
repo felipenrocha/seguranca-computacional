@@ -5,7 +5,7 @@ from flask_bootstrap import Bootstrap4
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, TextAreaField, RadioField
 from wtforms.validators import DataRequired
-from flaskr.models.frequency import frequencyLetters, frequencyTrigrams, getChartValues
+from flaskr.models.frequency import getChartValues, trigramCounter
 from flaskr.models.vigenere import key_gen, encryption, decryption
 from flask_wtf.csrf import CSRFProtect
     
@@ -68,14 +68,15 @@ def hack():
     keySizeForm = KeySizeForm()
     
     criptogram = ''
-    lettersDictionary = {}
     trigramsDictionary = {}
+    multiplesDict = {}
     if form.submit.data and form.validate_on_submit() and request.method == 'POST':
         
         criptogram = form.criptogram.data # get value of criptogram
-        lettersDictionary = frequencyLetters(criptogram)
-        trigramsDictionary = frequencyTrigrams(criptogram)
-        json_dump = {"criptogram": criptogram, "lettersDictionary": lettersDictionary, "trigramsDictionary": trigramsDictionary} # persisting the criptogram for later (unfortenetely):
+        trigramsDictionary = trigramCounter(criptogram)[0]
+        multiplesDict = trigramCounter(criptogram)[1]
+
+        json_dump = {"criptogram": criptogram, "trigramsDictionary": trigramsDictionary, "multiplesDict": multiplesDict} # persisting the criptogram for later (unfortenetely):
 
         with open(json_url, "w", encoding="utf8") as write_file:
             json.dump(json_dump, write_file, indent=4)
@@ -87,19 +88,19 @@ def hack():
         criptogram  = getCurrentCriptogram()
         
         if criptogram:
-            lettersDictionary = frequencyLetters(criptogram)
-            trigramsDictionary = frequencyTrigrams(criptogram)
+            trigramsDictionary = trigramCounter(criptogram)[0]
+            multiplesDict = trigramCounter(criptogram)[1]
         value = keySizeForm.value.data
-        return render_template('solver.html', form=form, form2=keySizeForm, frequencyDictionary=lettersDictionary, trigramsDictionary=trigramsDictionary, checkMultiple=checkMultiple, keySize=int(value)) 
-    return render_template('solver.html', form=form, form2=keySizeForm, frequencyDictionary=lettersDictionary, trigramsDictionary=trigramsDictionary, checkMultiple=checkMultiple) 
+        return render_template('solver.html', form=form, form2=keySizeForm,  trigramsDictionary=trigramsDictionary, checkMultiple=checkMultiple, keySize=int(value)) 
+    return render_template('solver.html', form=form, form2=keySizeForm,  trigramsDictionary=trigramsDictionary, checkMultiple=checkMultiple) 
 
     
 #hack route (PART2)
 @app.route('/hack-part-two', methods=['GET', 'POST'])
 def hack_two():
     keySizeForm = KeySizeForm()
-    lettersDictionary = getCurrentDictionary()['lettersDictionary']
     trigramsDictionary = getCurrentDictionary()['trigramsDictionary']
+    multiplesDict = getCurrentDictionary()['multiplesDict']
 
 
     if keySizeForm.submit.data and keySizeForm.validate_on_submit() and request.method == 'POST':
@@ -107,7 +108,7 @@ def hack_two():
         print("value", keySizeForm.value.data)
         return redirect('/hack-part-three/'+str(value), code=302)
 
-    return render_template('solver2.html', form2=keySizeForm, frequencyDictionary=lettersDictionary, trigramsDictionary=trigramsDictionary, checkMultiple=checkMultiple) 
+    return render_template('solver2.html', form2=keySizeForm, trigramsDictionary=trigramsDictionary, multiplesDict=multiplesDict,checkMultiple=checkMultiple) 
 
 
 

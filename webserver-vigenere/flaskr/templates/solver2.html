@@ -30,12 +30,20 @@
 <body>
   <div class="container">
     <h3>Vigenere Solver</h3>
-
     <h3 style="font-style: bold">
       Select key size: (Most likely the collumn with most x's)
     </h3>
     <form method="post">{{ render_form(form2) }}</form>
+    {% if multiplesDict %}
+    <div class="row">
+    {%for number in multiplesDict%}
 
+      <div class="col-md-4" style="text-align: center">
+
+    Key Size: {{number}} - Probability:  {{multiplesDict[number]}}
+    </div>
+    {%endfor%}
+    {%endif%}
     {% if trigramsDictionary %}
 
     <table id="data" class="table" style="width: 70%; height: 60%">
