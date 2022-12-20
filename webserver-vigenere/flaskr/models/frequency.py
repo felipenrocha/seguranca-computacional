@@ -4,53 +4,63 @@ import string
 alfabeto = 'abcdefghijklmnopqrstuvxwyz'
 
 
-def frequencyLetters(message):
 
-    """string -> dictionary of frequency of each letter"""
-    # turn all letters to upper case:
-    message = message.upper()
-    message = unidecode(message)
-    frequencyDictionary = dict()
-    for letter in message:
-        if letter in frequencyDictionary.keys():
-            #todo refactor
-            # soma um da frequencia de cada letra
-            frequencyDictionary[letter] = frequencyDictionary[letter] + 1
+def trigramCounter(message):
+    trigrams = []
+    frequencyTrigrams = {}
+    message =  unidecode(message)
+    message = message.replace(" ", "")
+    message = message.translate(str.maketrans('', '', string.punctuation))
+
+    # push all trigrams: 
+    for i in range(len(message)):
+        trigram = message[i:i+3]
+        trigrams.append({"name": trigram, "position": i})
+    # check for repeated ones 
+    for i in range(len(trigrams)):
+        trigram = trigrams[i]
+        name = trigram['name']
+        if name not in frequencyTrigrams.keys():
+            frequencyTrigrams[name] = {"position": [i], "frequency": 1 }
         else:
-            frequencyDictionary.update({letter: 1})
-    return frequencyDictionary
+            frequencyTrigrams[name]['position'].append(i)
+            frequencyTrigrams[name]['frequency'] = frequencyTrigrams[name]['frequency'] + 1
+    # print('freq trigrams', frequencyTrigrams)
 
-
-def frequencyTrigrams(message):
-    message = message.upper()
-    frequencyTrigrams = list()
-    for b, c in trigram_counter(message):
-        if c > 1 and ' ' not in b:
-            frequencyTrigrams.append({"name": b,  "frequency": c, "spacing": findSpacing(b, message)})
-    return frequencyTrigrams
-
-def findSpacing(trigram, message):
-    first_index= message.find(trigram)
-    new_string = message[first_index+1:]
-    second_index = new_string.find(trigram) + first_index + 1
-    if second_index != -1:
-       return second_index - first_index 
-    else:
-        return second_index
-
-
-
-def trigram_counter(s):
+    # remove frequencies == 1 
+    for name in list(frequencyTrigrams):
+        trigram = frequencyTrigrams[name]
+        if trigram['frequency'] == 1:
+            del frequencyTrigrams[name]
+    chartList = []
+    # find spacing between them:
+    for name in list(frequencyTrigrams):
+        trigram = frequencyTrigrams[name]
+        # get spacing between positions:
+        for i in range(len(trigram['position'])-1):
+            spacing = trigram['position'][i+1] - trigram['position'][i]
+            chartList.append({"name": name, "spacing": spacing})
     
-    s = unidecode(s)
-   
-    # CODE FROM: https://stackoverflow.com/questions/74087541/bigrams-of-letters
-    if len(s := s.upper()) > 1:
-        c = {}
-        for i in range(len(s)-1):
-            if len(bi := s[i:i+3].strip('. ')) == 3 and (' ' or '  ' or string.punctuation) not in bi:
-                c[bi] = c.get(bi, 0) + 1
-        return [(t) for t in c.items()]
+    # get most common multiple between 2-20
+    spacingList = []
+    multiplesDict = {}
+    # push all spacings
+    for i in range(len(chartList)):
+        spacing = chartList[i]['spacing']
+        for j in range(2,20):
+            if str(j) not in multiplesDict.keys():
+                multiplesDict[str(j)] = 0  
+            if spacing % j == 0:
+                multiplesDict[str(j)] = multiplesDict[str(j)] + 1
+    # transform into %
+    total = 0
+    for number in multiplesDict:
+        total = total + multiplesDict[number]
+    for number in multiplesDict:
+        multiplesDict[number] = round((multiplesDict[number] / total) * 100,  2)
+    
+    print("MultiplesDict", multiplesDict)
+    return [chartList, multiplesDict]
 
 
 

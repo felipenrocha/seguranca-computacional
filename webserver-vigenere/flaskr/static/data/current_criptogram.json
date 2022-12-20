@@ -1,218 +1,352 @@
 {
     "criptogram": "rvgllakieg tye tirtucatzoe.  whvnvvei i winu mpsecf xronieg giid abfuk thv mfuty; wyenvvvr ik ij a drmg, drzzqly eomemsei in dy jouc; wyenvvvr i wied mpsvlf znmollnkarzlp palszng seworv cfffzn narvhfusvs, rnd srzngznx up khv rerr ff emeiy flnvrac i deek; aed ejpvcirlcy wyeeevvr dy hppfs gvt jucy ae upgei haed ff mv, tyat zt ieqliies r skroeg dorrl grieczplv tf prvvvnt de wrod dvliseiatvlp stvpginx ieto khv stievt, aed detyouicrlcy keotkieg geoglv's hrtj ofw--tyen, z atcolnk it yixh tzmv to xek to jer as jofn aj i tan.  khzs ij mp susskitltv foi pzstfl rnd sacl.  wzty a pyicosfpyicrl wlolrzsh tako tyrfws yidsecf lpoe hzs snoid; i huzetcy kakv tf thv syip.  khvre zs eotyieg slrgrijieg ie tyis.  zf khep blt keen it, rldosk acl mvn zn tyezr dvgiee, jode tzmv or ftyer, thvrijh merp nvarcy khe jade fvecinxs kowrrus tye fcern nity mv.",
-    "lettersDictionary": {
-        " ": 149,
-        "'": 1,
-        ",": 8,
-        "-": 2,
-        ".": 6,
-        ";": 4,
-        "A": 25,
-        "B": 2,
-        "C": 21,
-        "D": 23,
-        "E": 64,
-        "F": 27,
-        "G": 19,
-        "H": 19,
-        "I": 51,
-        "J": 13,
-        "K": 23,
-        "L": 29,
-        "M": 15,
-        "N": 30,
-        "O": 29,
-        "P": 21,
-        "Q": 2,
-        "R": 45,
-        "S": 35,
-        "T": 46,
-        "U": 13,
-        "V": 44,
-        "W": 13,
-        "X": 6,
-        "Y": 30,
-        "Z": 24
+    "multiplesDict": {
+        "10": 12.54,
+        "11": 1.08,
+        "12": 1.43,
+        "13": 2.15,
+        "14": 3.94,
+        "15": 6.09,
+        "16": 1.08,
+        "17": 1.43,
+        "18": 1.43,
+        "19": 0.72,
+        "2": 15.77,
+        "3": 7.53,
+        "4": 7.53,
+        "5": 17.92,
+        "6": 5.02,
+        "7": 5.38,
+        "8": 6.09,
+        "9": 2.87
     },
     "trigramsDictionary": [
         {
-            "frequency": 2,
-            "name": "KIE",
-            "spacing": 433
-        },
-        {
-            "frequency": 5,
-            "name": "IEG",
-            "spacing": 49
-        },
-        {
-            "frequency": 5,
-            "name": "TYE",
-            "spacing": 452
-        },
-        {
-            "frequency": 3,
-            "name": "NVV",
-            "spacing": 53
-        },
-        {
-            "frequency": 2,
-            "name": "MPS",
-            "spacing": 105
-        },
-        {
-            "frequency": 2,
-            "name": "SEC",
-            "spacing": 567
-        },
-        {
-            "frequency": 2,
-            "name": "ECF",
-            "spacing": 567
-        },
-        {
-            "frequency": 3,
-            "name": "THV",
-            "spacing": 582
-        },
-        {
-            "frequency": 3,
-            "name": "WYE",
-            "spacing": 52
-        },
-        {
-            "frequency": 3,
-            "name": "YEN",
-            "spacing": 52
-        },
-        {
-            "frequency": 2,
-            "name": "ENV",
-            "spacing": 52
-        },
-        {
-            "frequency": 3,
-            "name": "VVV",
-            "spacing": 52
-        },
-        {
-            "frequency": 3,
-            "name": "VVR",
-            "spacing": 52
-        },
-        {
-            "frequency": 2,
-            "name": "SEI",
-            "spacing": 265
-        },
-        {
-            "frequency": 2,
-            "name": "LNK",
-            "spacing": 313
-        },
-        {
-            "frequency": 2,
-            "name": "ZNG",
-            "spacing": 36
-        },
-        {
-            "frequency": 2,
-            "name": "RND",
+            "name": "kie",
             "spacing": 353
         },
         {
-            "frequency": 3,
-            "name": "KHV",
+            "name": "ieg",
+            "spacing": 40
+        },
+        {
+            "name": "ieg",
+            "spacing": 313
+        },
+        {
+            "name": "ieg",
+            "spacing": 182
+        },
+        {
+            "name": "ieg",
+            "spacing": 10
+        },
+        {
+            "name": "tye",
+            "spacing": 367
+        },
+        {
+            "name": "tye",
+            "spacing": 213
+        },
+        {
+            "name": "tye",
+            "spacing": 22
+        },
+        {
+            "name": "tye",
+            "spacing": 43
+        },
+        {
+            "name": "atz",
+            "spacing": 240
+        },
+        {
+            "name": "nvv",
+            "spacing": 43
+        },
+        {
+            "name": "nvv",
+            "spacing": 40
+        },
+        {
+            "name": "eii",
+            "spacing": 67
+        },
+        {
+            "name": "iwi",
+            "spacing": 83
+        },
+        {
+            "name": "mps",
+            "spacing": 83
+        },
+        {
+            "name": "mps",
+            "spacing": 307
+        },
+        {
+            "name": "sec",
+            "spacing": 455
+        },
+        {
+            "name": "ecf",
+            "spacing": 455
+        },
+        {
+            "name": "egg",
+            "spacing": 313
+        },
+        {
+            "name": "thv",
+            "spacing": 465
+        },
+        {
+            "name": "thv",
+            "spacing": 92
+        },
+        {
+            "name": "ywy",
+            "spacing": 153
+        },
+        {
+            "name": "wye",
+            "spacing": 40
+        },
+        {
+            "name": "wye",
+            "spacing": 113
+        },
+        {
+            "name": "yen",
+            "spacing": 40
+        },
+        {
+            "name": "yen",
+            "spacing": 270
+        },
+        {
+            "name": "env",
+            "spacing": 40
+        },
+        {
+            "name": "vvv",
+            "spacing": 40
+        },
+        {
+            "name": "vvv",
             "spacing": 185
         },
         {
-            "frequency": 3,
-            "name": "AED",
-            "spacing": 52
+            "name": "vvr",
+            "spacing": 40
         },
         {
-            "frequency": 2,
-            "name": "RLC",
-            "spacing": 165
+            "name": "vvr",
+            "spacing": 113
         },
         {
-            "frequency": 2,
-            "name": "LCY",
-            "spacing": 165
+            "name": "vri",
+            "spacing": 40
         },
         {
-            "frequency": 2,
-            "name": "GRI",
-            "spacing": 334
+            "name": "vri",
+            "spacing": 505
         },
         {
-            "frequency": 2,
-            "name": "INX",
-            "spacing": 411
+            "name": "jad",
+            "spacing": 558
         },
         {
-            "frequency": 2,
-            "name": "ICR",
-            "spacing": 157
+            "name": "sei",
+            "spacing": 215
         },
         {
-            "frequency": 2,
-            "name": "CRL",
-            "spacing": 157
+            "name": "fzn",
+            "spacing": 30
         },
         {
-            "frequency": 2,
-            "name": "EOT",
-            "spacing": 237
+            "name": "lnk",
+            "spacing": 255
         },
         {
-            "frequency": 2,
-            "name": "TZM",
-            "spacing": 273
+            "name": "zng",
+            "spacing": 30
         },
         {
-            "frequency": 2,
-            "name": "ZMV",
-            "spacing": 273
+            "name": "rnd",
+            "spacing": 280
         },
         {
-            "frequency": 2,
-            "name": "HZS",
-            "spacing": 98
+            "name": "nds",
+            "spacing": 280
         },
         {
-            "frequency": 2,
-            "name": "ACL",
-            "spacing": 167
+            "name": "pkh",
+            "spacing": 350
         },
         {
-            "frequency": 2,
-            "name": "PYI",
+            "name": "khv",
+            "spacing": 150
+        },
+        {
+            "name": "khv",
+            "spacing": 200
+        },
+        {
+            "name": "hvr",
+            "spacing": 350
+        },
+        {
+            "name": "hvr",
+            "spacing": 85
+        },
+        {
+            "name": "vre",
+            "spacing": 350
+        },
+        {
+            "name": "aed",
+            "spacing": 43
+        },
+        {
+            "name": "aed",
+            "spacing": 90
+        },
+        {
+            "name": "rlc",
+            "spacing": 135
+        },
+        {
+            "name": "lcy",
+            "spacing": 135
+        },
+        {
+            "name": "mvt",
+            "spacing": 142
+        },
+        {
+            "name": "tya",
+            "spacing": 200
+        },
+        {
+            "name": "tie",
+            "spacing": 73
+        },
+        {
+            "name": "gri",
+            "spacing": 265
+        },
+        {
+            "name": "vtf",
+            "spacing": 230
+        },
+        {
+            "name": "inx",
+            "spacing": 320
+        },
+        {
+            "name": "iet",
+            "spacing": 228
+        },
+        {
+            "name": "hvs",
+            "spacing": 193
+        },
+        {
+            "name": "det",
+            "spacing": 260
+        },
+        {
+            "name": "ety",
+            "spacing": 212
+        },
+        {
+            "name": "icr",
+            "spacing": 120
+        },
+        {
+            "name": "crl",
+            "spacing": 120
+        },
+        {
+            "name": "cyk",
+            "spacing": 163
+        },
+        {
+            "name": "cyk",
+            "spacing": 115
+        },
+        {
+            "name": "eot",
+            "spacing": 182
+        },
+        {
+            "name": "jof",
+            "spacing": 38
+        },
+        {
+            "name": "kit",
+            "spacing": 45
+        },
+        {
+            "name": "ity",
+            "spacing": 275
+        },
+        {
+            "name": "tyi",
+            "spacing": 150
+        },
+        {
+            "name": "tyi",
+            "spacing": 17
+        },
+        {
+            "name": "tzm",
+            "spacing": 210
+        },
+        {
+            "name": "zmv",
+            "spacing": 210
+        },
+        {
+            "name": "hzs",
+            "spacing": 80
+        },
+        {
+            "name": "acl",
+            "spacing": 130
+        },
+        {
+            "name": "pyi",
             "spacing": 7
         },
         {
-            "frequency": 2,
-            "name": "YIC",
+            "name": "yic",
             "spacing": 7
         },
         {
-            "frequency": 2,
-            "name": "HVR",
-            "spacing": 111
+            "name": "oty",
+            "spacing": 55
         },
         {
-            "frequency": 2,
-            "name": "TYI",
-            "spacing": 20
+            "name": "syi",
+            "spacing": 37
         },
         {
-            "frequency": 2,
-            "name": "RIJ",
-            "spacing": 93
+            "name": "rij",
+            "spacing": 70
         },
         {
-            "frequency": 2,
-            "name": "KHE",
+            "name": "gie",
+            "spacing": 43
+        },
+        {
+            "name": "khe",
+            "spacing": 70
+        },
+        {
+            "name": "nit",
             "spacing": 90
         }
     ]
