@@ -28,7 +28,7 @@ $(document).ready(function () {
                 data: {
                     labels: letters,
                     datasets: [{
-                        label: 'Frequency of Letters',
+                        label: 'Frequency of Letters (%)',
                         data: letters_value,
                         borderWidth: 1,
                         backgroundColor: "purple"
@@ -67,7 +67,7 @@ $(document).ready(function () {
             data: {
                 labels: letters,
                 datasets: [{
-                    label: 'Frequency of Letters',
+                    label: 'Frequency of Letters (%)',
                     data: letters_value,
                     borderWidth: 1,
                     backgroundColor: "purple"
@@ -120,7 +120,7 @@ $(document).ready(function () {
                         data: {
                             labels: letters2,
                             datasets: [{
-                                label: 'Frequency of Letters',
+                                label: 'Frequency of Letters (%)',
                                 data: letters_value2,
                                 borderWidth: 1,
                                 backgroundColor: "purple"

@@ -24,16 +24,24 @@
 <h3>Vigenere Solver</h3>
 
 <div style="margin: 0 auto;">
-  <select id="dropdown-id">
-    <option value="en">Inglês</option>
-    <option value="pt">Português</option>
-  </select>
-
+  <div class="row">
+    <div class="col-md-1">
+    <select class="form-control" id="dropdown-id">
+      <option value="en">Inglês</option>
+      <option value="pt">Português</option></div>
+    </select>
+  </div>
 </div>
 
 {%if message %}
 <div class="row">
   Mensagem: {{message}}
+  <br>
+  <div class="col-md-10"></div>
+  <div class="col-md-2">
+    <a href="/hack"><button class="btn btn-default">Voltar</button></a>
+  </div>
+
 </div>
 {%endif%}
 <div class="row">

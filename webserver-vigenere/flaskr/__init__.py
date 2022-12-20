@@ -153,8 +153,8 @@ class KeySizeForm(FlaskForm):
     submit = SubmitField('Select Key')
 
 class EncryptForm(FlaskForm):
-    message = TextAreaField("", validators=[DataRequired()])
-    key = TextAreaField("", validators=[DataRequired()])
+    message = TextAreaField("Message", validators=[DataRequired()])
+    key = StringField("Key", validators=[DataRequired()])
     submit = SubmitField('Encrypt/Decrypt')
 
 class BreakForm(FlaskForm):

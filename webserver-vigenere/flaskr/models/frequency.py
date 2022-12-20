@@ -16,6 +16,7 @@ def trigramCounter(message):
     for i in range(len(message)):
         trigram = message[i:i+3]
         trigrams.append({"name": trigram, "position": i})
+    
     # check for repeated ones 
     for i in range(len(trigrams)):
         trigram = trigrams[i]
@@ -25,7 +26,7 @@ def trigramCounter(message):
         else:
             frequencyTrigrams[name]['position'].append(i)
             frequencyTrigrams[name]['frequency'] = frequencyTrigrams[name]['frequency'] + 1
-    # print('freq trigrams', frequencyTrigrams)
+    
 
     # remove frequencies == 1 
     for name in list(frequencyTrigrams):
@@ -41,6 +42,8 @@ def trigramCounter(message):
             spacing = trigram['position'][i+1] - trigram['position'][i]
             chartList.append({"name": name, "spacing": spacing})
     
+
+
     # get most common multiple between 2-20
     multiplesDict = {}
     # push all spacings
@@ -73,8 +76,9 @@ def getChartValues(criptogram, currentLetter, keySize):
     criptogram = criptogram.translate(str.maketrans('', '', string.punctuation))
     # remove numbers
     criptogram = ''.join([i for i in criptogram if not i.isdigit()])
-    criptogram = criptogram.replace("—", "")
-    criptogram = criptogram.replace("”", "")
+    criptogram = remove_non_ascii(criptogram)
+
+
 
     # index = index - 1 
     i = currentLetter - 1 
@@ -85,6 +89,10 @@ def getChartValues(criptogram, currentLetter, keySize):
         letter = criptogram[i]
         freqLetters[letter] = freqLetters[letter]+1
         i = i + keySize
+    total = len(criptogram) / keySize
+    for letter in freqLetters:
+        freqLetters[letter] = round((freqLetters[letter] / total) * 100, 2)
+
     print(freqLetters)
     return freqLetters
 
