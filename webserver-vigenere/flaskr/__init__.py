@@ -65,28 +65,21 @@ def encryptAndDecrypt():
 def hack():
     keySize = 0
     form = TextForm()
-    keySizeForm = KeySizeForm()
-    
+    keySizeForm = KeySizeForm()  
     criptogram = ''
     trigramsDictionary = {}
     multiplesDict = {}
-    if form.submit.data and form.validate_on_submit() and request.method == 'POST':
-        
+    if form.submit.data and form.validate_on_submit() and request.method == 'POST':       
         criptogram = form.criptogram.data # get value of criptogram
         trigramsDictionary = trigramCounter(criptogram)[0]
         multiplesDict = trigramCounter(criptogram)[1]
-
         json_dump = {"criptogram": criptogram, "trigramsDictionary": trigramsDictionary, "multiplesDict": multiplesDict} # persisting the criptogram for later (unfortenetely):
-
         with open(json_url, "w", encoding="utf8") as write_file:
             json.dump(json_dump, write_file, indent=4)
-        print("in form 1")
-        
+        print("in form 1")       
         return redirect('/hack-part-two', code=302) 
-
     if keySizeForm.validate_on_submit() and request.method == 'POST' :
-        criptogram  = getCurrentCriptogram()
-        
+        criptogram  = getCurrentCriptogram()  
         if criptogram:
             trigramsDictionary = trigramCounter(criptogram)[0]
             multiplesDict = trigramCounter(criptogram)[1]
@@ -101,13 +94,10 @@ def hack_two():
     keySizeForm = KeySizeForm()
     trigramsDictionary = getCurrentDictionary()['trigramsDictionary']
     multiplesDict = getCurrentDictionary()['multiplesDict']
-
-
     if keySizeForm.submit.data and keySizeForm.validate_on_submit() and request.method == 'POST':
         value = int(keySizeForm.value.data)
         print("value", keySizeForm.value.data)
         return redirect('/hack-part-three/'+str(value), code=302)
-
     return render_template('solver2.html', form2=keySizeForm, trigramsDictionary=trigramsDictionary, multiplesDict=multiplesDict,checkMultiple=checkMultiple) 
 
 
@@ -126,8 +116,15 @@ def frequency():
 
 @app.route('/hack-part-three/<keysize>', methods=['GET', 'POST'])
 def hack_three(keysize):
-    
-    return render_template('solver3.html', keySize=int(keysize)) 
+    form = BreakForm()
+    message = ''
+    if form.submit.data and form.validate_on_submit():
+        key = form.key.data
+        criptogram = getCurrentCriptogram()
+        message = decryption(key, criptogram)
+        return render_template('solver3.html', keySize=int(keysize), form=form, message=message) 
+
+    return render_template('solver3.html', keySize=int(keysize), form=form) 
 
 def getCurrentCriptogram():
     jsonFile = {}
@@ -159,6 +156,10 @@ class EncryptForm(FlaskForm):
     message = TextAreaField("", validators=[DataRequired()])
     key = TextAreaField("", validators=[DataRequired()])
     submit = SubmitField('Encrypt/Decrypt')
+
+class BreakForm(FlaskForm):
+    key = StringField("Chave ", validators=[DataRequired()])
+    submit = SubmitField('Break')
 
 def checkMultiple(multiple, number):
     if multiple % number == 0:
