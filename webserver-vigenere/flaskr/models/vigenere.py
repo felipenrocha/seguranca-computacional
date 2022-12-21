@@ -1,10 +1,12 @@
-
-import string
+## Vigenere Cipher
 
 def key_gen(key, message):
-    """Function responsble to generate key repeating the base key until it has the size of the message"""
+    """Function responsible to generate key repeating the base key until it has the size of the message"""
+    # get size of key
     size_of_key = len(key)
+    # set new string
     new_key = ''
+    # push new string as long as it has len of message
     for index, letter in enumerate(message):
         new_key += key[index % size_of_key]
     return new_key
@@ -16,6 +18,7 @@ def encryption(key, message):
 
     # generate key
     key = key_gen(key, message)
+
     # set new string
     criptogram = ''
     # index used to encrypt (only increased when a char is pushed)

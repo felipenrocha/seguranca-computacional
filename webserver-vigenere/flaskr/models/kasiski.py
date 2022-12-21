@@ -1,4 +1,6 @@
-#### file to calculate frequency of letters in messages
+## kasiski attack:
+
+
 from unidecode import unidecode
 import string
 alfabeto = 'abcdefghijklmnopqrstuvxwyz'
@@ -6,9 +8,15 @@ alfabeto = 'abcdefghijklmnopqrstuvxwyz'
 
 
 def trigramCounter(message):
+    """Function to return the spacing between each repeated trigram and the % of times that numbers from 2-20 are multiples from each spacing"""
     
-    trigrams = [] # all trigrams from message
-    frequencyTrigrams = {} # dictionary where keys are trigrams and it has the positions and frequencies of each one ex.: "KIE": {"position":[1,6,19], "frequency": 3}
+    trigrams = [] # all trigrams from message ex.:[{"name": KIE, "position": 0}, ...]
+    frequencyTrigrams = {} # dictionary used to calculate spacing ex.: "KIE": {"position":[1,6,19], "frequency": 3}:
+    spacingList = [] # array to get spacing between each trigram ex.:[{name: KIE, "spacing": 353, "name": IEG, "spacing": 40, ...}]
+    multiplesDict = {} # dictionary that has how many spacings are multiples of numbers from range to 2-20 ex.:{"2": 10%, "3":12%, ...}
+
+
+
     message =  unidecode(message)
     message = message.replace(" ", "")
     message = message.translate(str.maketrans('', '', string.punctuation))
@@ -23,19 +31,16 @@ def trigramCounter(message):
         trigram = trigrams[i]
         name = trigram['name']
         if name not in frequencyTrigrams.keys():
-            frequencyTrigrams[name] = {"position": [i], "frequency": 1 }
-        else:
-            frequencyTrigrams[name]['position'].append(i)
-            frequencyTrigrams[name]['frequency'] = frequencyTrigrams[name]['frequency'] + 1
-    
-
+            frequencyTrigrams[name] = {"position": [], "frequency": 0 }
+        frequencyTrigrams[name]['position'].append(i)
+        frequencyTrigrams[name]['frequency'] = frequencyTrigrams[name]['frequency'] + 1
+        
     # remove frequencies == 1 
     for name in list(frequencyTrigrams):
         trigram = frequencyTrigrams[name]
         if trigram['frequency'] == 1:
             del frequencyTrigrams[name]
     
-    spacingList = [] # array to get spacing between each trigram
 
     # find spacing between them:
     for name in list(frequencyTrigrams):
@@ -47,11 +52,7 @@ def trigramCounter(message):
     
 
 
-    # get most common multiple between 2-20:
-
-
-    multiplesDict = {} # dictionary that has how many spacings are multiples of numbers from range to 2-20
-    
+    # get most common divider between 2-20:  
     # push all spacings
     for i in range(len(spacingList)):
         spacing = spacingList[i]['spacing']
@@ -75,17 +76,17 @@ def trigramCounter(message):
 
 
 
+
 def getFrequencies(criptogram, currentLetterIndex, keySize):
+    """Function to return the frequency of each letter in positions [currentLetterIndex, currentLetterIndex + keySize, ...]"""
 
-    # normalize string  
-    criptogram = normalize_string(criptogram)
-
-
-    # index = index - 1 
-    i = currentLetterIndex - 1 
-
-    freqLetters = {} # dictionary that has how many appearences of each letter happens in positions [currentLetterIndex, currentLetterIndex + keySize, ...]
+    criptogram = normalize_string(criptogram)   # normalize string
+    i = currentLetterIndex - 1 # index = currentLetterIndex - 1    
+    freqLetters = {} # freqLetters = {"a": 10.2, "b": 3.5, ...  }
+    totalCharacters = len(criptogram) / keySize # total number of charecters scanned (number of characters / size of key)
     
+
+
     # push all letters to dict
     for letter in alfabeto:
         freqLetters[letter] = 0
@@ -95,18 +96,20 @@ def getFrequencies(criptogram, currentLetterIndex, keySize):
         letter = criptogram[i]
         freqLetters[letter] = freqLetters[letter]+1
 
-        # loop adding keySize
-        i = i + keySize
+        
+        i = i + keySize # add loop to key size
 
     # transform into %
-    total = len(criptogram) / keySize
     for letter in freqLetters:
-        freqLetters[letter] = round((freqLetters[letter] / total) * 100, 2)
+        freqLetters[letter] = round((freqLetters[letter] / totalCharacters) * 100, 2)
 
     return freqLetters
 
 
+# support functions
+
 def normalize_string(criptogram):
+    """Remove undesired characters from criptogram"""
     criptogram = criptogram.lower()
     # remove spaces
     criptogram = criptogram.replace(" ","")

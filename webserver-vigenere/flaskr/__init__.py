@@ -5,7 +5,7 @@ from flask_bootstrap import Bootstrap4
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, TextAreaField, RadioField
 from wtforms.validators import DataRequired
-from flaskr.models.frequency import getFrequencies, trigramCounter
+from flaskr.models.kasiski import getFrequencies, trigramCounter
 from flaskr.models.vigenere import key_gen, encryption, decryption
 from flask_wtf.csrf import CSRFProtect
     
