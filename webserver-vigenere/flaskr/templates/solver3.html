@@ -21,11 +21,13 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
 
 
-<h3>Vigenere Solver</h3>
+<div class="container">
+<h3 style="text-align: center">Vigenere Solver</h3>
 
-<div style="margin: 0 auto;">
+<div style="margin-inline: auto; margin-bottom: 2rem;">
   <div class="row">
-    <div class="col-md-1">
+    <div class="col-md-5"></div>
+    <div class="col-md-2">
     <select class="form-control" id="dropdown-id">
       <option value="en">Inglês</option>
       <option value="pt">Português</option></div>
@@ -77,4 +79,5 @@
     <button id="shif-right">Shift Right</button>
     <canvas id="freqLetters2"></canvas>
   </div>
+</div>
 </div>
