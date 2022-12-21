@@ -1,11 +1,19 @@
 Webserver to Break and Encrypt/Decrypt using Vigenere Cipher
+
+
 Segurança Computacional - UnB
+
+
 Prof.: João Gondim
 
 
 Felipe Nascimento Rocha - 170/0050084
+
+
 Jônatas Gomes Barbosa da Silva - 170059847
 
+
+Python: >=3.10.x
 
 Compilação Linux
 
