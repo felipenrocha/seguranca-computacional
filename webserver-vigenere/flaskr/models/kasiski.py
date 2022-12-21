@@ -34,7 +34,12 @@ def trigramCounter(message):
             frequencyTrigrams[name] = {"position": [], "frequency": 0 }
         frequencyTrigrams[name]['position'].append(i)
         frequencyTrigrams[name]['frequency'] = frequencyTrigrams[name]['frequency'] + 1
+<<<<<<< HEAD:webserver-vigenere/flaskr/models/kasiski.py
         
+=======
+    
+
+>>>>>>> main:webserver-vigenere/flaskr/models/frequency.py
     # remove frequencies == 1 
     for name in list(frequencyTrigrams):
         trigram = frequencyTrigrams[name]
