@@ -108,7 +108,7 @@ def frequency():
     currentLetter = int(req['currentLetter'])
     keySize = int(req['keySize'])
     criptogram = getCurrentCriptogram()
-    resp = getFrequencies(criptogram=criptogram, currentLetter=currentLetter, keySize=keySize)
+    resp = getFrequencies(criptogram=criptogram, currentLetterIndex=currentLetter, keySize=keySize)
     return resp
 
 
