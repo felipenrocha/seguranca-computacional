@@ -5,7 +5,7 @@ from flask_bootstrap import Bootstrap4
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, TextAreaField, RadioField
 from wtforms.validators import DataRequired
-from flaskr.models.frequency import getChartValues, trigramCounter
+from flaskr.models.frequency import getFrequencies, trigramCounter
 from flaskr.models.vigenere import key_gen, encryption, decryption
 from flask_wtf.csrf import CSRFProtect
     
@@ -108,9 +108,7 @@ def frequency():
     currentLetter = int(req['currentLetter'])
     keySize = int(req['keySize'])
     criptogram = getCurrentCriptogram()
-    print('req', req)
-    resp = getChartValues(criptogram=criptogram, currentLetter=currentLetter, keySize=keySize)
-    print(resp)
+    resp = getFrequencies(criptogram=criptogram, currentLetter=currentLetter, keySize=keySize)
     return resp
 
 

@@ -1,10 +1,8 @@
 
 import string
-alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-
 
 def key_gen(key, message):
-    """Function to generate key repeating the base key until it has the size of the message"""
+    """Function responsble to generate key repeating the base key until it has the size of the message"""
     size_of_key = len(key)
     new_key = ''
     for index, letter in enumerate(message):
@@ -13,26 +11,49 @@ def key_gen(key, message):
 
 
 def encryption(key, message):
+    """Function to encrypt message based o Vigenere Cipher using key
+    """
+
+    # generate key
     key = key_gen(key, message)
+    # set new string
     criptogram = ''
+    # index used to encrypt (only increased when a char is pushed)
+    key_index = 0
+
+    #loop through string
     for i in range(len(message)):
+        # if message is an alphabet character encrypt using equation and push to final string
         if message[i].isalpha():
+          
             x = (ord(message[i]) +
-                ord(key[i])) % 26
+                ord(key[key_index])) % 26   # ord returns the unicode int of character
             x += ord('A')
             criptogram += chr(x)
+            key_index += 1
         else:
+        # else just push the other characters
             criptogram += message[i]
     return criptogram
      
 
 
 def decryption(key, criptogram):
+    """Function to decrypt message based o Vigenere Cipher using key"""
+    # generate key
     key= key_gen(key, criptogram)
+
+    # set all characters to upper to normalize string
     criptogram = criptogram.upper()
+    # set new string
     message = ''
+
+    # index used to decrypt (only increased when a char is pushed)
     key_index = 0
+
+    # loop through message
     for i in range(len(criptogram)):
+        #check if its an alphabet character 
         if criptogram[i].isalpha():
             x = (ord(criptogram[i]) -
                 ord(key[key_index]) + 26) % 26
@@ -43,20 +64,4 @@ def decryption(key, criptogram):
             message += criptogram[i]
     return message 
 
-
-def cesar_encode(message, key):
-    message_encoded = ''
-    for letra in message:
-        letter_index = alfabeto.find(letra)
-        new_letter = alfabeto[((letter_index + key) % 26)]
-        message_encoded += new_letter 
-    return message_encoded
-
-def cesar_decode(message, key):
-    message_decoded = ''
-    for letra in message:
-        letter_index = alfabeto.find(letra)
-        new_letter = alfabeto[((letter_index - key) % 26)]
-        message_decoded += new_letter 
-    return message_decoded
 
