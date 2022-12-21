@@ -7,10 +7,10 @@ Segurança Computacional - UnB
 Prof.: João Gondim
 
 
-Felipe Nascimento Rocha - 170/0050084
+Felipe Nascimento Rocha - 17/0050084
 
 
-Jônatas Gomes Barbosa da Silva - 170059847
+Jônatas Gomes Barbosa da Silva - 17/0059847
 
 
 Python: >=3.10.x
