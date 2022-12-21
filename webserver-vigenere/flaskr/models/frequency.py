@@ -23,10 +23,9 @@ def trigramCounter(message):
         trigram = trigrams[i]
         name = trigram['name']
         if name not in frequencyTrigrams.keys():
-            frequencyTrigrams[name] = {"position": [i], "frequency": 1 }
-        else:
-            frequencyTrigrams[name]['position'].append(i)
-            frequencyTrigrams[name]['frequency'] = frequencyTrigrams[name]['frequency'] + 1
+            frequencyTrigrams[name] = {"position": [], "frequency": None }
+        frequencyTrigrams[name]['position'].append(i)
+        frequencyTrigrams[name]['frequency'] = frequencyTrigrams[name]['frequency'] + 1
     
 
     # remove frequencies == 1 
